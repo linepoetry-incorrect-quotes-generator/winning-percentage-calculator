@@ -3,37 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Winning Percentage Calculator (With Ties) | Free Sports Stats Tool</title>
-    <meta name="description" content="Free winning percentage calculator for sports. Calculate winning percentages with or without ties - ideal for football, hockey, soccer, and more sports statistics.">
-    <meta name="keywords" content="winning percentage calculator, sports statistics, win percentage with ties, sports calculator, team performance, winning percentage formula">
-    <link rel="canonical" href="https://winning-percentage-calculator-three.vercel.app/">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/linepoetry-incorrect-quotes-generator/winning-percentage-calculator/c988882501bd14ff12c18c96ec950b2169f7ed8e/favicon-32x32.png">
-    <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/linepoetry-incorrect-quotes-generator/winning-percentage-calculator/c988882501bd14ff12c18c96ec950b2169f7ed8e/apple-touch-icon.png">
+    <meta name="description" content="Free restaurant tip calculator with bill splitting, percentage options, and helpful tipping guide. Calculate tips easily for your dining experience.">
+    <meta name="keywords" content="tip calculator, restaurant tip, bill split, gratuity calculator, dining tip">
+    <title>Restaurant Tip Calculator - Split Bills & Calculate Tips Easily</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <meta name="google-site-verification" content="R2a-Z1Ev5SDz4sz9CPt-1ieYPfzLFanRFEZtD10amsE" />
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Winning Percentage Calculator (With Ties) | Sports Performance Tool">
-    <meta property="og:description" content="Calculate winning percentage quickly with optional ties. Instant results with clear formulas and examples.">
-    <meta property="og:url" content="https://winning-percentage-calculator-three.vercel.app/">
-    <meta property="og:image" content="https://www.calculatorvalue.com/images/winning-percentage-calculator.jpg">
-    
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Winning Percentage Calculator (With Ties)">
-    <meta name="twitter:description" content="Free winning percentage calculator with ties option and real-time results.">
-    <meta name="twitter:image" content="https://www.calculatorvalue.com/images/winning-percentage-calculator.jpg">
-
-    <!-- Structured Data -->
+    <link rel="canonical" href="https://restaurant-tip-jn74.vercel.app/" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <script type="application/ld+json">
+    
     {
       "@context": "https://schema.org",
       "@type": "WebApplication",
-      "name": "Winning Percentage Calculator",
-      "description": "Calculate winning percentages with or without ties for sports teams and leagues",
-      "url": "https://winning-percentage-calculator-three.vercel.app/",
-      "applicationCategory": "Sports Tool",
+      "name": "Restaurant Tip Calculator",
+      "description": "A free, easy-to-use restaurant tip calculator that supports bill splitting, custom percentages, and provides a comprehensive tipping guide.",
+      "url": "https://restaurant-tip-jn74.vercel.app/",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Any",
       "offers": {
         "@type": "Offer",
         "price": "0",
@@ -41,666 +28,649 @@
       }
     }
     </script>
-    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "How much should you tip at a restaurant in the US?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "While it varies, a standard tip for restaurant service in the US is between 15% and 20%. 15% is for standard service, 18% for good service, and 20% or more for excellent service."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Should you tip on the pre-tax amount?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, it is customary to calculate the tip based on the subtotal of the bill before taxes are added."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should I do if gratuity is already included in the bill?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For large groups (often 6 or more), many restaurants automatically add a gratuity of 18-20%. You should check your receipt. If it's included, you are not required to add an additional tip, though you can add more for exceptional service."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do tipping customs vary by country?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Tipping customs differ globally. In the US & Canada, 15-20% is expected. In many European countries, a service charge is included, and a smaller 5-10% tip is optional. In countries like Japan, tipping is not customary. It's always best to research local customs before traveling."
+          }
+        }
+      ]
+    }
+    </script>
     <style>
         :root {
-            --primary: #2c3e50;
-            --secondary: #3498db;
-            --accent: #e74c3c;
-            --light: #ecf0f1;
-            --dark: #2c3e50;
-            --success: #27ae60;
-            --warning: #f39c12;
+            --primary-color: #4CAF50;
+            --secondary-color: #2E7D32;
+            --accent-color: #81C784;
+            --background-color: #f9f9f9;
+            --card-bg-color: #fff;
+            --text-color: #333;
+            --light-text: #666;
+            --border-radius: 8px;
+            --box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            --transition: all 0.3s ease;
         }
-        
+
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
+
         body {
-            background-color: #f9f9f9;
-            color: var(--dark);
+            background-color: var(--background-color);
+            color: var(--text-color);
             line-height: 1.6;
-        }
-        
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
             padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
-        
+
         header {
             text-align: center;
-            margin-bottom: 30px;
-            padding: 20px 0;
-            background-color: var(--primary);
-            color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+            padding-top: 1rem;
         }
-        
+
         h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
         }
-        
+
+        .tagline {
+            color: var(--light-text);
+            font-size: 1.1rem;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                flex-direction: row;
+            }
+        }
+
+        .calculator-container, .guide-container {
+            flex: 1;
+            background-color: var(--card-bg-color);
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .calculator-container:hover, .guide-container:hover {
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
         h2 {
-            font-size: 1.8rem;
-            color: var(--primary);
-            margin: 25px 0 15px 0;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--secondary);
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 0.5rem;
         }
-        
-        p {
-            margin-bottom: 15px;
+
+        .input-group {
+            margin-bottom: 1.2rem;
         }
-        
-        .calculator {
-            background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
-        }
-        
-        .form-group {
-            margin-bottom: 20px;
-        }
-        
+
         label {
             display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
         }
-        
-        input[type="number"] {
+
+        input, select {
             width: 100%;
-            padding: 12px;
+            padding: 10px;
             border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 16px;
-            transition: border 0.3s;
-            -moz-appearance: textfield; /* Remove spinner for Firefox */
+            border-radius: var(--border-radius);
+            font-size: 1rem;
+            transition: var(--transition);
         }
-        
-        /* Remove spinner buttons for Chrome/Safari */
-        input[type="number"]::-webkit-outer-spin-button,
-        input[type="number"]::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
-        
-        input[type="number"]:focus {
-            border-color: var(--secondary);
+
+        input:focus, select:focus {
             outline: none;
-            box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2);
         }
-        
-        .btn {
-            background-color: var(--secondary);
-            color: white;
-            border: none;
-            padding: 12px 25px;
-            font-size: 16px;
-            font-weight: bold;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.1s;
-            margin-right: 10px;
-        }
-        
-        .btn:hover {
-            background-color: #2980b9;
-        }
-        
-        .btn:active {
-            transform: translateY(2px);
-        }
-        
-        .btn-primary {
-            background-color: var(--secondary);
-            width: 100%;
-            margin-top: 10px;
-            margin-bottom: 15px;
-        }
-        
-        .btn-reset {
-            background-color: var(--warning);
-        }
-        
-        .btn-share {
-            background-color: var(--success);
-        }
-        
-        .button-group {
+
+        .tip-buttons {
             display: flex;
             gap: 10px;
-            margin-top: 15px;
+            flex-wrap: wrap;
+            margin: 1rem 0;
         }
-        
-        @media (max-width: 600px) {
-            .button-group {
-                flex-direction: column;
-            }
-            
-            .btn {
-                width: 100%;
-                margin-right: 0;
-                margin-bottom: 10px;
-            }
+
+        .tip-btn {
+            background-color: var(--card-bg-color);
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 8px 15px;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
         }
-        
-        .result {
-            margin-top: 20px;
-            padding: 20px;
-            background-color: var(--light);
-            border-radius: 4px;
-            display: none;
+
+        .tip-btn:hover, .tip-btn.active {
+            background-color: var(--primary-color);
+            color: white;
         }
-        
-        .result.show {
-            display: block;
-            animation: fadeIn 0.5s;
+
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: var(--transition);
+            width: 100%;
+            margin-top: 1rem;
         }
-        
-        .percentage {
-            font-size: 2rem;
-            font-weight: bold;
-            color: var(--accent);
+
+        button:hover {
+            background-color: var(--secondary-color);
+        }
+
+        .results {
+            background-color: #f0f7f0;
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-top: 1.5rem;
+        }
+
+        .result-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .result-item.total {
+            font-weight: 700;
+            font-size: 1.3rem;
+            color: var(--primary-color);
+            border-top: 1px dashed #ccc;
+            padding-top: 0.5rem;
+            margin-top: 0.5rem;
+        }
+
+        .per-person {
+            background-color: #e8f5e9;
+            border-radius: var(--border-radius);
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+
+        .guide-container ul, .guide-container ol {
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .guide-container li {
+            margin-bottom: 0.5rem;
+        }
+
+        .guide-section {
+            margin-bottom: 1.5rem;
+        }
+
+        footer {
             text-align: center;
-            margin: 10px 0;
+            margin-top: 3rem;
+            color: var(--light-text);
+            font-size: 0.9rem;
         }
-        
-        .calculation {
-            font-family: monospace;
-            background-color: #f5f5f5;
-            padding: 10px;
-            border-radius: 4px;
-            margin-top: 10px;
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 0.5rem;
         }
-        
-        .emoji {
-            font-size: 1.5rem;
-            margin-right: 8px;
-        }
-        
-        .cta {
-            text-align: center;
-            padding: 20px;
-            background-color: #eaf2f8;
-            border-radius: 8px;
-            margin: 30px 0;
-        }
-        
-        .cta a {
-            color: var(--secondary);
+
+        .footer-links a {
+            color: var(--primary-color);
             text-decoration: none;
-            font-weight: bold;
         }
-        
-        .cta a:hover {
+
+        .footer-links a:hover {
             text-decoration: underline;
         }
         
-        .formula {
-            background-color: #f8f9fa;
-            padding: 15px;
-            border-left: 4px solid var(--secondary);
-            margin: 15px 0;
-            font-family: monospace;
+        .heart {
+            color: #e25555;
+            display: inline-block;
+            animation: beat 0.5s infinite alternate;
+            transform-origin: center;
         }
-        
-        .example {
-            background-color: #f0f7fb;
-            padding: 15px;
-            border-left: 4px solid #3498db;
-            margin: 15px 0;
+
+        @keyframes beat {
+            to { transform: scale(1.2); }
         }
-        
-        .sport-example {
-            margin: 20px 0;
-            padding: 15px;
-            background-color: #f8f9fa;
-            border-radius: 4px;
-        }
-        
-        footer {
+
+        .promo-box {
+            background-color: #e8f5e9;
+            border: 2px dashed var(--primary-color);
+            border-radius: var(--border-radius);
+            padding: 1.5rem;
+            margin: 2rem 0;
             text-align: center;
-            margin-top: 30px;
-            padding: 20px 0;
-            color: #666;
-            font-size: 0.9rem;
         }
-        
-        .toast {
-            position: fixed;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: var(--success);
+
+        .promo-box h3 {
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+
+        .promo-box a {
+            background-color: var(--primary-color);
             color: white;
             padding: 10px 20px;
-            border-radius: 4px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-            z-index: 1000;
-            display: none;
-            opacity: 0;
-            transition: opacity 0.3s;
-        }
-        
-        .toast.show {
-            display: block;
-            opacity: 1;
-            animation: fadeInOut 3s;
-        }
-        
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
-        
-        @keyframes fadeInOut {
-            0% { opacity: 0; }
-            15% { opacity: 1; }
-            85% { opacity: 1; }
-            100% { opacity: 0; }
-        }
-        
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            grid-gap: 20px;
-        }
-        
-        .input-label {
-            font-size: 14px;
-            color: #777;
-            margin-top: 5px;
-        }
-        
-        @media (max-width: 768px) {
-            .container {
-                padding: 15px;
-            }
-            
-            .calculator {
-                padding: 20px;
-            }
-            
-            h1 {
-                font-size: 2rem;
-            }
-            
-            h2 {
-                font-size: 1.5rem;
-            }
-            
-            .percentage {
-                font-size: 1.8rem;
-            }
-            
-            input[type="number"] {
-                font-size: 16px; /* Prevent iOS zoom on focus */
-                padding: 14px;
-            }
-            
-            .btn {
-                padding: 14px 20px;
-                font-size: 16px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .grid {
-                grid-template-columns: 1fr;
-                grid-gap: 15px;
-            }
-            
-            .calculator {
-                padding: 15px;
-            }
-            
-            input[type="number"] {
-                padding: 16px;
-                border-radius: 8px;
-            }
-            
-            .form-group {
-                margin-bottom: 16px;
-            }
-            
-            label {
-                font-size: 16px;
-                margin-bottom: 10px;
-            }
-            
-            .input-label {
-                font-size: 13px;
-            }
-            
-            .btn {
-                padding: 16px 20px;
-                border-radius: 8px;
-                font-size: 16px;
-            }
-            
-            .button-group {
-                gap: 12px;
-            }
-            
-            .share-btn {
-                padding: 12px 15px;
-            }
-        }
-        
-        .share-options {
-            display: none;
-            margin-top: 15px;
-            padding: 15px;
-            border-radius: 4px;
-            background-color: #f8f9fa;
-        }
-        
-        .share-options.show {
-            display: block;
-            animation: fadeIn 0.3s;
-        }
-        
-        .share-btns {
-            display: flex;
-            gap: 10px;
-            margin-top: 10px;
-        }
-        
-        .share-btn {
-            padding: 8px 15px;
-            border-radius: 4px;
-            color: white;
-            font-weight: bold;
+            border-radius: var(--border-radius);
             text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
             display: inline-block;
-            cursor: pointer;
+        }
+
+        .promo-box a:hover {
+            background-color: var(--secondary-color);
         }
         
-        .facebook { background-color: #3b5998; }
-        .twitter { background-color: #1da1f2; }
-        .email { background-color: #777; }
+        .content-section {
+            background-color: var(--card-bg-color);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            margin-top: 2rem;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .results, .per-person {
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        #calculate-btn {
+            flex-grow: 2;
+        }
+
+        .secondary-btn {
+            background-color: #757575;
+            flex-grow: 1;
+        }
+
+        .secondary-btn:hover {
+            background-color: #616161;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>Winning Percentage Calculator</h1>
-            <p>Calculate team performance with or without ties</p>
-        </header>
-        
-        <div class="calculator">
-            <h2>Calculate Your Winning Percentage</h2>
-            <form id="calculatorForm">
-                <div class="grid">
-                    <div class="form-group">
-                        <label for="wins">Wins:</label>
-                        <input type="number" id="wins" min="0" placeholder="Enter wins" aria-label="Number of wins" inputmode="numeric" pattern="[0-9]*">
-                        <div class="input-label">Required</div>
-                    </div>
-                    <div class="form-group">
-                        <label for="losses">Losses:</label>
-                        <input type="number" id="losses" min="0" placeholder="Enter losses" aria-label="Number of losses" inputmode="numeric" pattern="[0-9]*">
-                        <div class="input-label">Required</div>
-                    </div>
-                    <div class="form-group">
-                        <label for="ties">Ties:</label>
-                        <input type="number" id="ties" min="0" value="0" placeholder="Enter ties" aria-label="Number of ties" inputmode="numeric" pattern="[0-9]*">
-                        <div class="input-label">Optional (default: 0)</div>
-                    </div>
-                    <div class="form-group">
-                        <label for="tieValue">Tie Value:</label>
-                        <input type="number" id="tieValue" min="0" max="1" step="0.1" value="0.5" aria-label="Tie value (between 0 and 1)" inputmode="decimal" pattern="[0-9]*\.?[0-9]*">
-                        <div class="input-label">Default: 0.5</div>
-                    </div>
+    <header>
+        <h1>Restaurant Tip Calculator</h1>
+        <p class="tagline">Split bills easily & calculate fair tips for your dining experience</p>
+    </header>
+    
+    <main class="container">
+        <section class="calculator-container">
+            <h2>Calculate Your Tip</h2>
+            
+            <div class="input-group">
+                <label for="bill-amount">Bill Amount ($)</label>
+                <input type="number" id="bill-amount" placeholder="e.g., 45.50" min="0" step="0.01" required>
+            </div>
+            
+            <div class="input-group">
+                <label>Choose Tip Percentage</label>
+                <div class="tip-buttons">
+                    <button class="tip-btn" data-tip="15">15%</button>
+                    <button class="tip-btn" data-tip="18">18%</button>
+                    <button class="tip-btn active" data-tip="20">20%</button>
+                    <button class="tip-btn" data-tip="25">25%</button>
+                    <button class="tip-btn custom" data-tip="custom">Custom</button>
+                </div>
+                <input type="number" id="custom-tip" placeholder="Enter custom %" min="0" max="100" style="display: none;">
+            </div>
+            
+            <div class="input-group">
+                <label for="people">Split Bill Between</label>
+                <input type="number" id="people" placeholder="Number of people" min="1" value="1" required>
+            </div>
+            
+            <div class="action-buttons">
+                <button id="calculate-btn">Calculate</button>
+                <button id="reset-btn" class="secondary-btn">Reset</button>
+                <button id="share-btn" class="secondary-btn">Share</button>
+            </div>
+            
+            <div class="results" id="results" style="display: none;">
+                <div class="result-item">
+                    <span>Bill Amount:</span>
+                    <span id="bill-text">$0.00</span>
+                </div>
+                <div class="result-item">
+                    <span>Tip Amount:</span>
+                    <span id="tip-amount">$0.00</span>
+                </div>
+                <div class="result-item total">
+                    <span>Total Amount:</span>
+                    <span id="total-amount">$0.00</span>
                 </div>
                 
-                <button type="submit" class="btn btn-primary" id="calculateBtn">Calculate Winning Percentage</button>
-                
-                <div class="result" id="result">
-                    <h3>Results:</h3>
-                    <div class="percentage" id="winPercentage">0.00%</div>
-                    <p><strong>Total Games:</strong> <span id="totalGames">0</span></p>
-                    <div class="calculation" id="calculation"></div>
-                </div>
-                
-                <div class="button-group">
-                    <button type="button" class="btn btn-reset" id="resetBtn">Reset Calculator</button>
-                    <button type="button" class="btn btn-share" id="shareBtn">Share Result</button>
-                </div>
-                
-                <div class="share-options" id="shareOptions">
-                    <h3>Share this result:</h3>
-                    <div class="share-btns">
-                        <a class="share-btn facebook" id="facebookShare" target="_blank" rel="noopener">Facebook</a>
-                        <a class="share-btn twitter" id="twitterShare" target="_blank" rel="noopener">Twitter</a>
-                        <a class="share-btn email" id="emailShare" target="_blank" rel="noopener">Email</a>
+                <div class="per-person" id="split-results" style="display: none;">
+                    <h3>Per Person</h3>
+                    <div class="result-item">
+                        <span>Bill per person:</span>
+                        <span id="bill-per-person">$0.00</span>
+                    </div>
+                    <div class="result-item">
+                        <span>Tip per person:</span>
+                        <span id="tip-per-person">$0.00</span>
+                    </div>
+                    <div class="result-item total">
+                        <span>Total per person:</span>
+                        <span id="total-per-person">$0.00</span>
                     </div>
                 </div>
-            </form>
-        </div>
+            </div>
+        </section>
         
-        <div>
-            <h2><span class="emoji">📘</span> What Is a Winning Percentage?</h2>
-            <p>A winning percentage is the proportion of games a team has won out of the total games played. It's expressed as a percentage, making it easy to compare performance between different teams or over different seasons.</p>
-            <p>For example, if a team plays 20 games and wins 15, their winning percentage is 75%.</p>
-            <p>But what happens when games end in a draw? That's what we'll explore next.</p>
-            
-            <h2><span class="emoji">🧮</span> How to Calculate Winning Percentage (Without Ties)</h2>
-            <p>The simplest version of the winning percentage formula is:</p>
-            <div class="formula">Winning % = (Wins / (Wins + Losses)) × 100</div>
-            
-            <div class="example">
-                <p><strong>Example:</strong></p>
-                <p>Wins: 12</p>
-                <p>Losses: 8</p>
-                <p>Total Games = 20</p>
-                <p>Winning % = (12 / 20) × 100 = 60%</p>
-            </div>
-            <p>This works fine when there are no tied games — but many sports aren't that simple.</p>
-            
-            <h2><span class="emoji">⚖️</span> How to Calculate Winning Percentage with Ties</h2>
-            <p>In sports like football (soccer), hockey, or even some cricket matches, tied results are possible. Ties are not counted as full wins, but they do represent partial success. That's why we use a tie value, typically 0.5.</p>
-            <p><strong>Updated Formula:</strong></p>
-            <div class="formula">Winning % = ((Wins + (Ties × Tie Value)) / Total Games) × 100</div>
-            <p>Where:</p>
-            <p>Tie Value is usually 0.5 (but can vary based on rules)</p>
-            <p>Total Games = Wins + Losses + Ties</p>
-            
-            <div class="example">
-                <p><strong>Example:</strong></p>
-                <p>Wins: 10</p>
-                <p>Losses: 4</p>
-                <p>Ties: 2</p>
-                <p>Tie Value = 0.5</p>
-                <p>Total Games = 16</p>
-                <p>Winning % = (10 + (0.5 × 2)) / 16 × 100 = 68.75%</p>
+        <section class="guide-container">
+            <h2>A Comprehensive Guide to Tipping</h2>
+
+            <div class="promo-box">
+                <h3>Looking for More?</h3>
+                <p>For more specialized calculators and financial tools, check out our main site.</p>
+                <a href="https://www.calculatorvalue.com/financial/restaurant/tip">Visit CalculatorValue.com</a>
             </div>
             
-            <h2><span class="emoji">⚽</span> Real-World Examples by Sport</h2>
-            
-            <div class="sport-example">
-                <h3>🟢 Football (Soccer)</h3>
-                <p>Wins: 8, Ties: 5, Losses: 2</p>
-                <p>Total Games = 15</p>
-                <p>Winning % = (8 + (0.5 × 5)) / 15 × 100 = 70%</p>
+            <div class="guide-section">
+                <h3>Introduction: Why We Tip</h3>
+                <p>Tipping is a common social custom in many parts of the world, especially in the service industry. It's a way for customers to show appreciation for good service. In countries like the United States, many service workers earn a significant portion of their income from tips, which supplements a lower base wage. Understanding when, where, and how much to tip can make your dining experience smoother and more enjoyable.</p>
+            </div>
+
+            <div class="guide-section">
+                <h3>How Much Should You Tip at a Restaurant? (U.S. Standard)</h3>
+                <p>While tipping is at your discretion, the following is a standard guide for restaurant service in the United States:</p>
+                <ul>
+                    <li><strong>15% (Standard Service):</strong> This is often considered the minimum for acceptable service. If things went okay, 15% is a safe bet.</li>
+                    <li><strong>18% (Good Service):</strong> If your server was attentive and the experience was pleasant, 18% is a great way to show it.</li>
+                    <li><strong>20% (Excellent Service):</strong> This has become the new standard for great service. Many people default to 20% to reward servers who are friendly, efficient, and helpful.</li>
+                    <li><strong>25% or More (Exceptional Service):</strong> For service that goes above and beyond, a tip of 25% or more is a generous way to show your deep appreciation.</li>
+                </ul>
+                <p><strong>Pro Tip:</strong> Most people calculate the tip based on the subtotal of the bill before taxes are added.</p>
             </div>
             
-            <div class="sport-example">
-                <h3>🟢 Hockey</h3>
-                <p>Wins: 7, Losses: 8, Ties: 3</p>
-                <p>Total Games = 18</p>
-                <p>Winning % = (7 + (0.5 × 3)) / 18 × 100 ≈ 47.22%</p>
+            <div class="guide-section">
+                <h3>Advanced Tipping Etiquette</h3>
+                <ol>
+                    <li><strong>Check for Included Gratuity:</strong> For large groups (usually 6-8 people or more), many restaurants automatically add a gratuity of 18-20% to the bill. Always check your receipt before adding an extra tip.</li>
+                    <li><strong>Tipping on Discounted Meals:</strong> If you use a coupon or a gift card, you should tip on the original, pre-discount total of the bill. The server did the same amount of work.</li>
+                    <li><strong>What About Poor Service?</strong> If the service was genuinely poor, it's better to speak with a manager first rather than leaving no tip. If you still feel a lower tip is warranted, leaving 10-12% sends a message without stiffing the server completely, as they may have to "tip out" a portion to other staff (bartenders, bussers).</li>
+                    <li><strong>Tipping at the Bar:</strong> If you're just getting drinks, a common practice is to tip $1-$2 per drink, or 15-20% of the total bar tab.</li>
+                </ol>
             </div>
             
-            <div class="sport-example">
-                <h3>🟢 Cricket</h3>
-                <p>Wins: 12, Ties: 2, Losses: 6</p>
-                <p>Total Games = 20</p>
-                <p>Winning % = (12 + (0.5 × 2)) / 20 × 100 = 65%</p>
+            <div class="guide-section">
+                <h3>Tipping Around the World</h3>
+                <p>Tipping is not universal! Customs vary significantly by country. Here's a brief overview:</p>
+                <ul>
+                    <li><strong>US & Canada:</strong> Tipping 15-20% is expected.</li>
+                    <li><strong>Most of Western Europe (e.g., France, Spain, Germany):</strong> A service charge is often included ("Service Compris"). An additional 5-10% is appreciated for good service, but not obligatory. Rounding up the bill is common.</li>
+                    <li><strong>United Kingdom:</strong> Similar to the rest of Europe. A 12.5% service charge is often added. If not, a 10-15% tip is standard.</li>
+                    <li><strong>East Asia (e.g., Japan, China):</strong> Tipping is not customary and can sometimes be considered rude or cause confusion. Excellent service is expected as part of the job.</li>
+                    <li><strong>Australia & New Zealand:</strong> Tipping is not expected as staff are paid a higher minimum wage. However, a small tip (around 10%) for exceptional service is a welcome gesture.</li>
+                </ul>
+                <p><strong>Golden Rule:</strong> When in doubt, do a quick search on local tipping customs before you dine out in a new country.</p>
             </div>
-        </div>
-        
-        <div class="cta">
-            <h3>Need More Sports Calculators?</h3>
-            <p>Visit <a href="https://www.calculatorvalue.com/sports/performance/winning-percentage">CalculatorValue.com</a> for more sports performance calculators and real-time calculations!</p>
-        </div>
-        
-        <footer>
-            <p>Created with ❤️ for sports fans everywhere</p>
-            <p><small>© 2023 Winning Percentage Calculator</small></p>
-        </footer>
+            
+            <div class="guide-section">
+                <h3>Tips for Splitting the Bill</h3>
+                <ul>
+                    <li><strong>Decide Early:</strong> Discuss how you'll split the bill with your friends before you order to avoid confusion later.</li>
+                    <li><strong>Split by Item or Evenly?</strong> If everyone ordered similarly priced items, an even split is easiest. If there's a large price difference in what people ordered, it's fairer to pay for what you consumed. Our calculator can help with an even split.</li>
+                    <li><strong>Use Technology:</strong> For complex splits, don't be afraid to use payment apps like Venmo or Cash App. One person can pay the bill, and others can send their share instantly.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <div class="more-info">
+        <section id="about" class="content-section">
+            <h2>About & Contact</h2>
+            <p>This Restaurant Tip Calculator was created to provide a simple, free, and user-friendly tool for diners everywhere. Our goal is to take the guesswork out of calculating tips and splitting bills, so you can focus on enjoying your meal.</p>
+            <p>We are committed to providing accurate and helpful tools. For any questions, feedback, or suggestions, please feel free to reach out to us. We'd love to hear from you!</p>
+            <p><strong>Contact Email:</strong> <a href="mailto:calculatorvalue.com@gmail.com">calculatorvalue.com@gmail.com</a></p>
+        </section>
+
+        <section id="terms" class="content-section">
+            <h2>Terms of Use</h2>
+            <p>By using this website, you agree to the following terms and conditions. The information and tools provided on this site are for informational purposes only. We make no guarantees regarding the accuracy or completeness of the information. You agree to use this calculator at your own risk, and we are not liable for any issues arising from its use. All content on this site is the property of CalculatorValue.com.</p>
+        </section>
+
+        <section id="privacy" class="content-section">
+            <h2>Privacy Policy</h2>
+            <p>We respect your privacy. This website does not collect any personal data from its users. We do not use cookies or tracking technologies to monitor your activity. Any calculations you perform are done within your browser and are not stored on our servers. Since we do not collect information, we do not share it with any third parties. Your use of this tool is completely anonymous.</p>
+        </section>
     </div>
     
-    <div class="toast" id="toast">Link copied to clipboard!</div>
-    
+    <footer>
+        <p>Made with <span class="heart">❤</span> for easy tipping</p>
+        <div class="footer-links">
+        </div>
+    </footer>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             // Elements
-            const calculatorForm = document.getElementById('calculatorForm');
-            const resetBtn = document.getElementById('resetBtn');
-            const shareBtn = document.getElementById('shareBtn');
-            const shareOptions = document.getElementById('shareOptions');
-            const facebookShare = document.getElementById('facebookShare');
-            const twitterShare = document.getElementById('twitterShare');
-            const emailShare = document.getElementById('emailShare');
-            const toast = document.getElementById('toast');
+            const billInput = document.getElementById('bill-amount');
+            const customTipInput = document.getElementById('custom-tip');
+            const peopleInput = document.getElementById('people');
+            const calculateBtn = document.getElementById('calculate-btn');
+            const resetBtn = document.getElementById('reset-btn');
+            const shareBtn = document.getElementById('share-btn');
+            const tipButtons = document.querySelectorAll('.tip-btn');
+            const resultsDiv = document.getElementById('results');
+            const splitResultsDiv = document.getElementById('split-results');
             
-            // Form submission (calculate)
-            calculatorForm.addEventListener('submit', function(e) {
-                e.preventDefault();
-                calculateWinningPercentage();
-            });
+            // Result elements
+            const billText = document.getElementById('bill-text');
+            const tipAmountText = document.getElementById('tip-amount');
+            const totalAmountText = document.getElementById('total-amount');
+            const billPerPersonText = document.getElementById('bill-per-person');
+            const tipPerPersonText = document.getElementById('tip-per-person');
+            const totalPerPersonText = document.getElementById('total-per-person');
             
-            // Reset button
-            resetBtn.addEventListener('click', function() {
-                document.getElementById('wins').value = '';
-                document.getElementById('losses').value = '';
-                document.getElementById('ties').value = '0';
-                document.getElementById('tieValue').value = '0.5';
-                document.getElementById('result').classList.remove('show');
-                shareOptions.classList.remove('show');
-            });
+            // Default values
+            let tipPercentage = 20;
             
-            // Share button
-            shareBtn.addEventListener('click', function() {
-                const resultElement = document.getElementById('result');
-                
-                if (resultElement.classList.contains('show')) {
-                    shareOptions.classList.toggle('show');
-                    setupShareLinks();
-                } else {
-                    alert('Please calculate a result first before sharing.');
-                }
-            });
-            
-            // Input validation
-            const inputs = document.querySelectorAll('input[type="number"]');
-            inputs.forEach(input => {
-                input.addEventListener('input', function() {
-                    if (this.value < 0) this.value = 0;
+            // Event listeners for tip buttons
+            tipButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    tipButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Handle custom tip input
+                    if(this.dataset.tip === 'custom') {
+                        customTipInput.style.display = 'block';
+                        customTipInput.focus();
+                        tipPercentage = customTipInput.value || 20;
+                    } else {
+                        customTipInput.style.display = 'none';
+                        tipPercentage = parseInt(this.dataset.tip);
+                    }
                 });
             });
             
-            // Set tie value limits
-            const tieValue = document.getElementById('tieValue');
-            tieValue.addEventListener('input', function() {
-                if (this.value < 0) this.value = 0;
-                if (this.value > 1) this.value = 1;
+            // Custom tip input handler
+            customTipInput.addEventListener('input', function() {
+                tipPercentage = parseFloat(this.value) || 0;
             });
+            
+            // Calculate button handler
+            calculateBtn.addEventListener('click', calculateTip);
+            
+            // Reset button handler
+            resetBtn.addEventListener('click', resetCalculator);
+
+            // Share button handler
+            shareBtn.addEventListener('click', shareCalculator);
+
+            // Also calculate when enter key is pressed on inputs
+            [billInput, customTipInput, peopleInput].forEach(input => {
+                input.addEventListener('keyup', function(e) {
+                    if (e.key === 'Enter') {
+                        calculateTip();
+                    }
+                });
+            });
+            
+            function calculateTip() {
+                // Get values
+                const billAmount = parseFloat(billInput.value) || 0;
+                const currentTipPercentage = (customTipInput.style.display === 'block') ? (parseFloat(customTipInput.value) || 0) : tipPercentage;
+                const numPeople = parseInt(peopleInput.value) || 1;
+                
+                // Validate inputs
+                if (billAmount <= 0) {
+                    alert('Please enter a valid bill amount');
+                    billInput.focus();
+                    return;
+                }
+                
+                if (numPeople <= 0) {
+                    alert('Please enter a valid number of people');
+                    peopleInput.focus();
+                    return;
+                }
+                
+                // Calculate
+                const tipAmount = billAmount * (currentTipPercentage / 100);
+                const totalAmount = billAmount + tipAmount;
+                
+                // Display total results
+                billText.textContent = formatCurrency(billAmount);
+                tipAmountText.textContent = formatCurrency(tipAmount);
+                totalAmountText.textContent = formatCurrency(totalAmount);
+
+                // Handle split bill logic
+                if (numPeople > 1) {
+                    const billPerPerson = billAmount / numPeople;
+                    const tipPerPerson = tipAmount / numPeople;
+                    const totalPerPerson = totalAmount / numPeople;
+                    
+                    billPerPersonText.textContent = formatCurrency(billPerPerson);
+                    tipPerPersonText.textContent = formatCurrency(tipPerPerson);
+                    totalPerPersonText.textContent = formatCurrency(totalPerPerson);
+                    
+                    splitResultsDiv.style.display = 'block';
+                } else {
+                    splitResultsDiv.style.display = 'none';
+                }
+                
+                // Show results container
+                resultsDiv.style.display = 'block';
+            }
+            
+            function resetCalculator() {
+                billInput.value = '';
+                customTipInput.value = '';
+                peopleInput.value = '1';
+                
+                // Reset tip buttons to default
+                tipButtons.forEach(btn => btn.classList.remove('active'));
+                document.querySelector('.tip-btn[data-tip="20"]').classList.add('active');
+                customTipInput.style.display = 'none';
+                tipPercentage = 20;
+
+                resultsDiv.style.display = 'none';
+                billInput.focus();
+            }
+
+            async function shareCalculator() {
+                const shareData = {
+                    title: 'Restaurant Tip Calculator',
+                    text: 'Check out this easy-to-use tip calculator!',
+                    url: window.location.href
+                };
+
+                try {
+                    if (navigator.share) {
+                        await navigator.share(shareData);
+                        console.log('Calculator shared successfully');
+                    } else {
+                        // Fallback for browsers that do not support the Web Share API
+                        navigator.clipboard.writeText(shareData.url);
+                        alert('Link copied to clipboard!');
+                    }
+                } catch (err) {
+                    console.error('Error sharing:', err);
+                    // Fallback for when sharing fails
+                    navigator.clipboard.writeText(shareData.url);
+                    alert('Sharing failed. Link copied to clipboard instead!');
+                }
+            }
+
+            function formatCurrency(amount) {
+                return '$' + amount.toFixed(2);
+            }
+            
+            // Initialize with default values
+            peopleInput.value = 1;
         });
-        
-        function calculateWinningPercentage() {
-            // Get input values
-            const wins = parseInt(document.getElementById('wins').value) || 0;
-            const losses = parseInt(document.getElementById('losses').value) || 0;
-            const ties = parseInt(document.getElementById('ties').value) || 0;
-            const tieValue = parseFloat(document.getElementById('tieValue').value) || 0.5;
-            
-            // Calculate total games
-            const totalGames = wins + losses + ties;
-            
-            // Check if we have any games
-            if (totalGames === 0) {
-                alert("Please enter at least one win, loss, or tie.");
-                return;
-            }
-            
-            // Calculate winning percentage
-            let winningPercentage;
-            if (ties > 0) {
-                winningPercentage = ((wins + (ties * tieValue)) / totalGames) * 100;
-            } else {
-                winningPercentage = (wins / totalGames) * 100;
-            }
-            
-            // Display results
-            document.getElementById('totalGames').textContent = totalGames;
-            document.getElementById('winPercentage').textContent = winningPercentage.toFixed(2) + '%';
-            
-            // Build calculation string
-            let calcStr = `Calculation:<br>`;
-            if (ties > 0) {
-                calcStr += `Winning % = ((${wins} + (${ties} × ${tieValue})) / ${totalGames}) × 100<br>`;
-                calcStr += `Winning % = ${winningPercentage.toFixed(2)}%`;
-            } else {
-                calcStr += `Winning % = (${wins} / ${totalGames}) × 100<br>`;
-                calcStr += `Winning % = ${winningPercentage.toFixed(2)}%`;
-            }
-            document.getElementById('calculation').innerHTML = calcStr;
-            
-            // Show result div
-            document.getElementById('result').classList.add('show');
-            
-            // Hide share options when new calculation is made
-            document.getElementById('shareOptions').classList.remove('show');
-            
-            return winningPercentage;
-        }
-        
-        function setupShareLinks() {
-            const winPercentage = document.getElementById('winPercentage').textContent;
-            const wins = document.getElementById('wins').value || 0;
-            const losses = document.getElementById('losses').value || 0;
-            const ties = document.getElementById('ties').value || 0;
-            
-            const shareText = `My team's winning percentage is ${winPercentage} (W: ${wins}, L: ${losses}, T: ${ties})`;
-            const shareUrl = window.location.href;
-            
-            // Facebook
-            document.getElementById('facebookShare').setAttribute('href', 
-                `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(shareUrl)}&quote=${encodeURIComponent(shareText)}`
-            );
-            
-            // Twitter
-            document.getElementById('twitterShare').setAttribute('href', 
-                `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`
-            );
-            
-            // Email
-            document.getElementById('emailShare').setAttribute('href', 
-                `mailto:?subject=My Team's Winning Percentage&body=${encodeURIComponent(shareText + '\n\nCalculate yours at: ' + shareUrl)}`
-            );
-        }
-        
-        function showToast(message) {
-            const toast = document.getElementById('toast');
-            toast.textContent = message;
-            toast.classList.add('show');
-            
-            setTimeout(() => {
-                toast.classList.remove('show');
-            }, 3000);
-        }
     </script>
 </body>
 </html> 
