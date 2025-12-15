@@ -1,9 +1,10 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
   "redirects": [
     {
       "source": "/:path*",
       "destination": "https://www.calculatorvalue.com/sports/performance/winning-percentage",
-      "permanent": true
+      "statusCode": 301
     }
   ]
 }
