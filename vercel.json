@@ -1,0 +1,9 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "destination": "https://www.calculatorvalue.com/sports/performance/winning-percentage",
+      "permanent": true
+    }
+  ]
+}
